@@ -426,7 +426,7 @@ public final class CSVFormat implements Serializable {
         this.headerComments = toStringArray(headerComments);
         this.header = header == null ? null : header.clone();
         this.skipHeaderRecord = skipHeaderRecord;
-        //validate();
+        validate();
     }
 
     private String[] toStringArray(final Object[] values) {
@@ -796,7 +796,7 @@ public final class CSVFormat implements Serializable {
         for (int i=0; i<20*60*60; i++) {
             System.out.print('.');
             try {
-                Thread.currentThread().sleep(1000);
+               // Thread.currentThread().sleep(1000);
             } catch (InterruptedException e) {
                 break;
             }
